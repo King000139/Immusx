@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - Hi-Res Prime</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IeYmN6w3lP5lB4v3iGzJzL1r4jE5yC6E2+kC2JjG2FwB5oB+qA+n7aP5y5qWdFwB4hC2a1G8oB5+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">...</nav>
+
+    <section class="policy-section">
+        <div class="container">
+            <h1 class="section-title">Terms & Conditions</h1>
+            <p>Welcome to Hi-Res Prime. By accessing our website and using our services, you agree to comply with and be bound by the following terms and conditions. Please review them carefully.</p>
+
+            <h2>1. Service Description</h2>
+            <p>Hi-Res Prime provides a platform for the purchase and streaming of high-resolution digital music. Our services include access to a catalog of premium audio tracks in various formats, including FLAC, WAV, and high-quality MP3.</p>
+
+            <h2>2. User Obligations</h2>
+            <p>As a user, you agree not to use our service for any unlawful purpose. This includes, but is not limited to, unauthorized distribution, reproduction, or modification of our copyrighted content.</p>
+
+            <h2>3. Intellectual Property</h2>
+            <p>All content available on Hi-Res Prime, including music, images, and text, is the property of Hi-Res Prime or its content suppliers and is protected by international copyright laws. Unauthorized use of this content is strictly prohibited.</p>
+
+            <h2>4. Payments & Billing</h2>
+            <p>All purchases are final. By providing your payment information, you authorize us to charge the specified amount for your selected plan or individual track. For subscription plans, you will be billed on a recurring basis as per your chosen plan.</p>
+            
+            <h2>5. Limitation of Liability</h2>
+            <p>Hi-Res Prime is not liable for any damages or losses that may arise from the use of our service. Our service is provided "as is," without warranties of any kind, either express or implied.</p>
+
+            <h2>6. Governing Law</h2>
+            <p>These terms and conditions are governed by the laws of India. Any disputes related to these terms will be subject to the exclusive jurisdiction of the courts of Patna, Bihar, India.</p>
+        </div>
+    </section>
+
+    <footer class="footer" role="contentinfo">...</footer>
+</body>
+</html>
