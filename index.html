@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi-Res Prime - Premium High-Quality Music</title>
+    <link rel="stylesheet" href="Color.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IeYmN6w3lP5lB4v3iGzJzL1r4jE5yC6E2+kC2JjG2FwB5oB+qA+n7aP5y5qWdFwB4hC2a1G8oB5+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home" aria-label="Hi-Res Prime home"><h2>Hi-Res Prime</h2></a>
+            </div>
+            <ul class="nav-menu" role="menu">
+                <li role="none"><a href="#home" class="nav-link" role="menuitem">Home</a></li>
+                <li role="none"><a href="#catalog" class="nav-link" role="menuitem">Catalog</a></li>
+                <li role="none"><a href="#artists" class="nav-link" role="menuitem">Artists</a></li>
+                <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+                <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+                <li role="none"><button class="nav-link login-btn" aria-controls="login-modal" aria-expanded="false">Login</button></li>
+            </ul>
+            <button class="hamburger" aria-label="Open mobile menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section id="home" class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+            <h1 id="hero-title" class="hero-title">Premium High-Resolution Music</h1>
+            <p class="hero-subtitle">Experience music like never before with our exclusive collection of lossless audio tracks.</p>
+            <div class="hero-buttons">
+                <a href="#catalog" class="btn-primary">Start Listening</a>
+                <a href="#catalog" class="btn-secondary">Browse Catalog</a>
+            </div>
+        </div>
+        <div class="hero-player">
+            <div class="player-card" role="region" aria-label="Featured music player">
+                <div class="track-info">
+                    <img src="https://via.placeholder.com/80x80" alt="Cover for featured track, High Fidelity." class="track-cover">
+                    <div class="track-details">
+                        <h4 class="track-title">High Fidelity</h4>
+                        <p class="track-artist">The Resonators</p>
+                    </div>
+                </div>
+                <div class="player-controls">
+                    <button class="play-btn" aria-label="Play featured track"><i class="fas fa-play" aria-hidden="true"></i></button>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress"></div>
+                    </div>
+                    <span class="time" aria-live="off">2:34 / 3:45</span>
+                </div>
+                <div class="quality-badge">
+                    <span>FLAC 24-bit</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" aria-labelledby="features-heading">
+        <div class="container">
+            <h2 id="features-heading" class="visually-hidden">Key Features</h2>
+            <div class="features-grid">
+                <article class="feature-card" aria-labelledby="lossless-quality-heading">
+                    <i class="fas fa-music" aria-hidden="true"></i>
+                    <h3 id="lossless-quality-heading">Lossless Quality</h3>
+                    <p>FLAC, WAV, and premium MP3 formats for audiophiles.</p>
+                </article>
+                <article class="feature-card" aria-labelledby="exclusive-content-heading">
+                    <i class="fas fa-crown" aria-hidden="true"></i>
+                    <h3 id="exclusive-content-heading">Exclusive Content</h3>
+                    <p>Rare tracks and premium collections you won't find elsewhere.</p>
+                </article>
+                <article class="feature-card" aria-labelledby="instant-download-heading">
+                    <i class="fas fa-download" aria-hidden="true"></i>
+                    <h3 id="instant-download-heading">Instant Download</h3>
+                    <p>Get your music immediately after purchase.</p>
+                </article>
+                <article class="feature-card" aria-labelledby="drm-protected-heading">
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                    <h3 id="drm-protected-heading">DRM Protected</h3>
+                    <p>Secure downloads with digital rights management.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalog" class="catalog" aria-labelledby="catalog-heading">
+        <div class="container">
+            <h2 id="catalog-heading" class="section-title">Music Catalog</h2>
+            <div class="catalog-filters" role="tablist" aria-label="Music genres">
+                <button class="filter-btn active" role="tab" aria-selected="true" id="tab-all">All</button>
+                <button class="filter-btn" role="tab" aria-selected="false" id="tab-electronic">Electronic</button>
+                <button class="filter-btn" role="tab" aria-selected="false" id="tab-rock">Rock</button>
+                <button class="filter-btn" role="tab" aria-selected="false" id="tab-jazz">Jazz</button>
+                <button class="filter-btn" role="tab" aria-selected="false" id="tab-classical">Classical</button>
+                <button class="filter-btn" role="tab" aria-selected="false" id="tab-hip-hop">Hip Hop</button>
+            </div>
+            <div class="music-grid" role="tabpanel" aria-labelledby="tab-all">
+                <article class="music-card">
+                    <img src="https://via.placeholder.com/200x200" alt="Album cover for Premium Track 1 by Artist Name." loading="lazy">
+                    <div class="music-info">
+                        <h4>Premium Track 1</h4>
+                        <p>Artist Name</p>
+                        <div class="music-price">₹5</div>
+                        <button class="preview-btn" aria-label="Preview Premium Track 1"><i class="fas fa-play" aria-hidden="true"></i> Preview</button>
+                        <button class="buy-btn" aria-label="Buy Premium Track 1">Buy Now</button>
+                    </div>
+                </article>
+                </div>
+        </div>
+    </section>
+
+    <section class="subscription" aria-labelledby="subscription-heading">
+        <div class="container">
+            <h2 id="subscription-heading" class="section-title">Subscription Plans</h2>
+            <div class="plans-grid">
+                <article class="plan-card">
+                    <h3>Per Track</h3>
+                    <div class="price">₹5<span>/track</span></div>
+                    <ul>
+                        <li>Individual track purchase</li>
+                        <li>Lossless quality</li>
+                        <li>Instant download</li>
+                        <li>No monthly commitment</li>
+                    </ul>
+                    <a href="#" class="plan-btn">Choose Plan</a>
+                </article>
+                <article class="plan-card featured" aria-label="Most popular plan">
+                    <div class="popular">Most Popular</div>
+                    <h3>Monthly Premium</h3>
+                    <div class="price">₹199<span>/month</span></div>
+                    <ul>
+                        <li>Unlimited downloads</li>
+                        <li>All premium content</li>
+                        <li>Early access to new releases</li>
+                        <li>Cancel anytime</li>
+                    </ul>
+                    <a href="#" class="plan-btn">Choose Plan</a>
+                </article>
+                <article class="plan-card">
+                    <h3>Custom Bundle</h3>
+                    <div class="price">Custom<span>/pricing</span></div>
+                    <ul>
+                        <li>Bulk purchases</li>
+                        <li>Commercial licensing</li>
+                        <li>Exclusive content</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="#contact" class="plan-btn">Contact Us</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="artists" class="artists" aria-labelledby="artists-heading">
+        <div class="container">
+            <h2 id="artists-heading" class="section-title">Featured Artists</h2>
+            <div class="artists-grid">
+                <article class="artist-card">
+                    <img src="https://via.placeholder.com/150x150" alt="Profile picture of Artist Name 1, an electronic producer." loading="lazy">
+                    <h4>Artist Name 1</h4>
+                    <p>Electronic Producer</p>
+                    <a href="#" class="artist-btn">View Collection</a>
+                </article>
+                </div>
+        </div>
+    </section>
+
+    <section id="about" class="about" aria-labelledby="about-heading">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 id="about-heading">About Hi-Res Prime</h2>
+                    <p>Hi-Res Prime is a premium music platform dedicated to delivering the highest quality audio experience to music lovers and audiophiles worldwide. We curate exclusive, rare, and premium high-quality music that you won't find anywhere else.</p>
+                    <p>Our mission is to preserve and distribute music in its purest form, offering lossless formats like FLAC and WAV alongside premium MP3 options. Every track in our collection is carefully selected and mastered to ensure the best possible listening experience.</p>
+                    <div class="about-stats">
+                        <div class="stat" aria-labelledby="tracks-stat">
+                            <h3 id="tracks-stat">10,000+</h3>
+                            <p>Premium Tracks</p>
+                        </div>
+                        <div class="stat" aria-labelledby="artists-stat">
+                            <h3 id="artists-stat">500+</h3>
+                            <p>Exclusive Artists</p>
+                        </div>
+                        <div class="stat" aria-labelledby="quality-stat">
+                            <h3 id="quality-stat">24-bit</h3>
+                            <p>Lossless Quality</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/500x400" alt="A high-end audio setup, symbolizing the quality of our music." loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="contact-heading">
+        <div class="container">
+            <h2 id="contact-heading" class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hiresprime@gamil.c</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <div>
+                            <h4>WhatsApp Support</h4>
+                            <p>Coming soon...</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        <div>
+                            <h4>Support Hours</h4>
+                            <p>24/7 Customer Support</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" action="#" method="post">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required aria-label="Your Name">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required aria-label="Your Email">
+                    <input type="text" id="subject" name="subject" placeholder="Subject" required aria-label="Subject">
+                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required aria-label="Your Message"></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hi-Res Prime</h3>
+                    <p>Premium high-resolution music platform for audiophiles and music lovers.</p>
+                    <div class="social-links" aria-label="Social media links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#catalog">Catalog</a></li>
+                        <li><a href="#artists">Artists</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#terms">Terms & Conditions</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#refund">Refund Policy</a></li>
+                        <li><a href="#licensing">Licensing Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#downloads">My Downloads</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hi-Res Prime. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js">
+      // DOM Elements
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+const navLinks = document.querySelectorAll('.nav-link');
+const filterButtons = document.querySelectorAll('.filter-btn');
+const musicCards = document.querySelectorAll('.music-card');
+const playButton = document.querySelector('.play-btn');
+const progressBar = document.querySelector('.progress');
+const contactForm = document.querySelector('.contact-form');
+
+// ---
+// Mobile Navigation Toggle
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on a link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
+
+// ---
+// Smooth Scrolling for Navigation Links
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                const offsetTop = targetElement.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+});
+
+// ---
+// Navbar Background on Scroll
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 100) {
+        navbar.style.background = 'rgba(0, 0, 0, 0.98)';
+        navbar.style.backdropFilter = 'blur(20px)';
+    } else {
+        navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+        navbar.style.backdropFilter = 'blur(10px)';
+    }
+});
+
+// ---
+// Music Category Filters (Completed)
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        const category = button.textContent.toLowerCase();
+        
+        musicCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            if (category === 'all' || cardCategory === category) {
+                card.style.display = 'block';
+                card.style.animation = 'fadeIn 0.5s ease-in-out';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
+// To make filtering work, you need to add data attributes to your HTML music cards.
+// Example: <article class="music-card" data-category="electronic">...</article>
+
+// ---
+// Music Player Functionality
+let isPlaying = false;
+let currentTime = 0;
+const totalTime = 225; // 3:45 in seconds
+
+if (playButton) {
+    playButton.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        const icon = playButton.querySelector('i');
+        
+        if (isPlaying) {
+            icon.className = 'fas fa-pause';
+            playButton.style.transform = 'scale(1.1)';
+            startProgress();
+        } else {
+            icon.className = 'fas fa-play';
+            playButton.style.transform = 'scale(1)';
+            stopProgress();
+        }
+    });
+}
+
+let progressInterval;
+
+function startProgress() {
+    progressInterval = setInterval(() => {
+        currentTime += 1;
+        const progressPercentage = (currentTime / totalTime) * 100;
+        
+        if (progressBar) {
+            progressBar.style.width = `${progressPercentage}%`;
+        }
+        
+        // Update time display
+        const timeDisplay = document.querySelector('.time');
+        if (timeDisplay) {
+            const currentMin = Math.floor(currentTime / 60);
+            const currentSec = currentTime % 60;
+            const totalMin = Math.floor(totalTime / 60);
+            const totalSec = totalTime % 60;
+            
+            timeDisplay.textContent = `${currentMin}:${currentSec.toString().padStart(2, '0')} / ${totalMin}:${totalSec.toString().padStart(2, '0')}`;
+        }
+        
+        if (currentTime >= totalTime) {
+            stopProgress();
+            resetPlayer();
+        }
+    }, 1000);
+}
+
+function stopProgress() {
+    clearInterval(progressInterval);
+}
+
+function resetPlayer() {
+    isPlaying = false;
+    currentTime = 0;
+    const icon = playButton.querySelector('i');
+    icon.className = 'fas fa-play';
+    playButton.style.transform = 'scale(1)';
+    if (progressBar) {
+        progressBar.style.width = '0%';
+    }
+}
+
+// ---
+// Preview Button Functionality
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('preview-btn') || e.target.closest('.preview-btn')) {
+        e.preventDefault();
+        const button = e.target.classList.contains('preview-btn') ? e.target : e.target.closest('.preview-btn');
+        const icon = button.querySelector('i');
+        
+        // Toggle preview state
+        if (button.textContent.includes('Preview')) {
+            button.innerHTML = '<i class="fas fa-stop"></i> Stop';
+            button.style.background = 'rgba(255, 107, 107, 0.2)';
+            
+            // Stop other previews
+            document.querySelectorAll('.preview-btn').forEach(btn => {
+                if (btn !== button && btn.textContent.includes('Stop')) {
+                    btn.innerHTML = '<i class="fas fa-play"></i> Preview';
+                    btn.style.background = 'rgba(255, 255, 255, 0.1)';
+                }
+            });
+        } else {
+            button.innerHTML = '<i class="fas fa-play"></i> Preview';
+            button.style.background = 'rgba(255, 255, 255, 0.1)';
+        }
+    }
+});
+
+// ---
+// Buy Button Functionality
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('buy-btn')) {
+        e.preventDefault();
+        const button = e.target;
+        const originalText = button.textContent;
+        
+        button.textContent = 'Processing...';
+        button.style.opacity = '0.7';
+        button.disabled = true;
+        
+        // Simulate purchase process
+        setTimeout(() => {
+            button.textContent = 'Added to Cart!';
+            button.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = 'linear-gradient(135deg, #ff6b6b, #ff8e53)';
+                button.style.opacity = '1';
+                button.disabled = false;
+            }, 2000);
+        }, 1500);
+    }
+});
+
+// ---
+// Contact Form Handling
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const submitBtn = contactForm.querySelector('.submit-btn');
+        const originalText = submitBtn.textContent;
+        
+        // Get form data
+        const formData = new FormData(contactForm);
+        const name = contactForm.querySelector('input[placeholder="Your Name"]').value;
+        const email = contactForm.querySelector('input[placeholder="Your Email"]').value;
+        const subject = contactForm.querySelector('input[placeholder="Subject"]').value;
+        const message = contactForm.querySelector('textarea').value;
+        
+        // Basic validation
+        if (!name || !email || !subject || !message) {
+            showNotification('Please fill in all fields', 'error');
+            return;
+        }
+        
+        if (!isValidEmail(email)) {
+            showNotification('Please enter a valid email address', 'error');
+            return;
+        }
+        
+        // Simulate form submission
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        setTimeout(() => {
+            submitBtn.textContent = 'Message Sent!';
+            submitBtn.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
+            contactForm.reset();
+            showNotification('Thank you! Your message has been sent successfully.', 'success');
+            
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.style.background = 'linear-gradient(135deg, #ff6b6b, #ff8e53)';
+                submitBtn.disabled = false;
+            }, 3000);
+        }, 2000);
+    });
+}
+
+// ---
+// Email validation helper
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// ---
+// Notification system
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+    
+    Object.assign(notification.style, {
+        position: 'fixed',
+        top: '100px',
+        right: '20px',
+        background: type === 'success' ? '#4CAF50' : type === 'error' ? '#ff6b6b' : '#2196F3',
+        color: 'white',
+        padding: '1rem 1.5rem',
+        borderRadius: '10px',
+        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+        zIndex: '10000',
+        transform: 'translateX(100%)',
+        transition: 'transform 0.3s ease-in-out',
+        maxWidth: '300px',
+        wordWrap: 'break-word'
+    });
+    
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Remove after 5 seconds
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 300);
+    }, 5000);
+}
+
+// ---
+// Scroll animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, observerOptions);
+
+// Add animation classes and observe elements
+document.addEventListener('DOMContentLoaded', () => {
+    // Add animation classes to elements
+    const animateElements = [
+        '.feature-card',
+        '.music-card',
+        '.plan-card',
+        '.artist-card',
+        '.about-text',
+        '.about-image',
+        '.contact-item'
+    ];
+    
+    animateElements.forEach(selector => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach((el, index) => {
+            el.classList.add('fade-in');
+            el.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(el);
+        });
+    });
+});
+
+// ---
+// Plan selection functionality
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('plan-btn')) {
+        e.preventDefault();
+        const button = e.target;
+        const planCard = button.closest('.plan-card');
+        const planName = planCard.querySelector('h3').textContent;
+        const planPrice = planCard.querySelector('.price').textContent;
+        
+        if (button.textContent === 'Contact Us') {
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+                setTimeout(() => {
+                    const subjectField = document.querySelector('input[placeholder="Subject"]');
+                    if (subjectField) {
+                        subjectField.value = `Inquiry about ${planName} Plan`;
+                    }
+                }, 1000);
+            }
+        } else {
+            button.textContent = 'Processing...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                showNotification(`${planName} plan selected! Redirecting to checkout...`, 'success');
+                button.textContent = 'Selected!';
+                button.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
+                
+                setTimeout(() => {
+                    button.textContent = 'Choose Plan';
+                    button.style.background = 'linear-gradient(135deg, #ff6b6b, #ff8e53)';
+                    button.disabled = false;
+                }, 3000);
+            }, 1500);
+        }
+    }
+});
+
+// ---
+// Artist card hover effects
+document.querySelectorAll('.artist-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        const img = card.querySelector('img');
+        if (img) {
+            img.style.transform = 'scale(1.1)';
+            img.style.transition = 'transform 0.3s ease';
+        }
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        const img = card.querySelector('img');
+        if (img) {
+            img.style.transform = 'scale(1)';
+        }
+    });
+});
+
+// ---
+// Music card hover effects with audio visualization simulation
+document.querySelectorAll('.music-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.boxShadow = '0 20px 40px rgba(255, 107, 107, 0.2)';
+        const img = card.querySelector('img');
+        if (img) {
+            img.style.filter = 'brightness(1.1) saturate(1.2)';
+            img.style.transition = 'filter 0.3s ease';
+        }
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
+        const img = card.querySelector('img');
+        if (img) {
+            img.style.filter = 'brightness(1) saturate(1)';
+        }
+    });
+});
+
+// ---
+// Keyboard navigation support
+document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        if (playButton) {
+            playButton.click();
+        }
+    }
+    
+    if (e.code === 'Escape') {
+        if (navMenu.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    }
+});
+
+// ---
+// Loading screen (optional)
+window.addEventListener('load', () => {
+    const loader = document.createElement('div');
+    loader.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000;
+        transition: opacity 0.5s ease-in-out;
+    `;
+    
+    const loaderContent = document.createElement('div');
+    loaderContent.innerHTML = `
+        <div style="text-align: center; color: white;">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Hi-Res Prime</h2>
+            <div style="width: 50px; height: 50px; border: 3px solid rgba(255,255,255,0.3); border-radius: 50%; border-top: 3px solid white; animation: spin 1s linear infinite; margin: 0 auto;"></div>
+        </div>
+        <style>
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        </style>
+    `;
+    
+    loader.appendChild(loaderContent);
+    
+    if (document.readyState === 'loading') {
+        document.body.appendChild(loader);
+        
+        setTimeout(() => {
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                if (document.body.contains(loader)) {
+                    document.body.removeChild(loader);
+                }
+            }, 500);
+        }, 1000);
+    }
+});
+
+// ---
+// Search functionality (Completed)
+function initializeSearch() {
+    const searchInput = document.createElement('input');
+    searchInput.type = 'search';
+    searchInput.placeholder = 'Search music...';
+    searchInput.style.cssText = `
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 25px;
+        padding: 0.5rem 1rem;
+        color: white;
+        margin-right: 1rem;
+        transition: all 0.3s ease;
+    `;
+    
+    // Add to navigation
+    const navMenu = document.querySelector('.nav-menu');
+    if (navMenu && window.innerWidth > 768) {
+        const searchLi = document.createElement('li');
+        searchLi.appendChild(searchInput);
+        navMenu.insertBefore(searchLi, navMenu.lastElementChild);
+    }
+    
+    // Search functionality
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        const musicCards = document.querySelectorAll('.music-card');
+        
+        musicCards.forEach(card => {
+            const title = card.querySelector('h4').textContent.toLowerCase();
+            const artist = card.querySelector('p').textContent.toLowerCase();
+            
+            if (title.includes(searchTerm) || artist.includes(searchTerm)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+}
+// Initialize search on page load
+document.addEventListener('DOMContentLoaded', initializeSearch);
+
+// ---
+// Back to top button (Added)
+function createBackToTopButton() {
+    const btn = document.createElement('button');
+    btn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    btn.style.cssText = `
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+        color: white;
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+    `;
+    
+    document.body.appendChild(btn);
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            btn.style.opacity = '1';
+            btn.style.visibility = 'visible';
+        } else {
+            btn.style.opacity = '0';
+            btn.style.visibility = 'hidden';
+        }
+    });
+    
+    btn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+document.addEventListener('DOMContentLoaded', createBackToTopButton);
+
+      
+    </script>
+    <style type="text/css" media="all">
+    /* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #0a0a0a;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo h2 {
+    color: #ff6b6b;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #ff6b6b;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff6b6b;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.login-btn {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    border: none;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-content {
+    flex: 1;
+    padding: 2rem;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #fff, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 500px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 107, 107, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.hero-player {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    z-index: 2;
+}
+
+.player-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.track-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.track-cover {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    margin-right: 1rem;
+}
+
+.track-details h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.track-details p {
+    opacity: 0.7;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.play-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+}
+
+.progress-bar {
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+}
+
+.time {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.quality-badge {
+    text-align: center;
+}
+
+.quality-badge span {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Features Section */
+.features {
+    padding: 5rem 0;
+    background: #111;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 107, 107, 0.3);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: #ff6b6b;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+/* Catalog Section */
+.catalog {
+    padding: 5rem 0;
+    background: #0a0a0a;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(45deg, #fff, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.catalog-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    border-color: transparent;
+}
+
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.music-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.music-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.music-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.music-info {
+    padding: 1.5rem;
+}
+
+.music-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.music-info p {
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
+
+.music-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff6b6b;
+    margin-bottom: 1rem;
+}
+
+.preview-btn, .buy-btn {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.preview-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.preview-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.buy-btn {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    color: white;
+}
+
+.buy-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+}
+
+/* Subscription Section */
+.subscription {
+    padding: 5rem 0;
+    background: #111;
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.plan-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.plan-card.featured {
+    border-color: #ff6b6b;
+    transform: scale(1.05);
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.plan-card.featured:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.popular {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.plan-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ff6b6b;
+    margin-bottom: 1.5rem;
+}
+
+.price span {
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+.plan-card ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.plan-card li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.9;
+}
+
+.plan-card li:last-child {
+    border-bottom: none;
+}
+
+.plan-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.plan-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 107, 107, 0.4);
+}
+
+/* Artists Section */
+.artists {
+    padding: 5rem 0;
+    background: #0a0a0a;
+}
+
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.artist-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.artist-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 107, 107, 0.3);
+}
+
+.artist-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 3px solid rgba(255, 107, 107, 0.3);
+}
+
+.artist-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.artist-card p {
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+}
+
+.artist-btn {
+    background: transparent;
+    border: 2px solid #ff6b6b;
+    color: #ff6b6b;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.artist-btn:hover {
+    background: #ff6b6b;
+    color: white;
+}
+
+/* About Section */
+.about {
+    padding: 5rem 0;
+    background: #111;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #fff, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.about-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat h3 {
+    font-size: 2rem;
+    color: #ff6b6b;
+    margin-bottom: 0.5rem;
+}
+
+.stat p {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Contact Section */
+.contact {
+    padding: 5rem 0;
+    background: #0a0a0a;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: #ff6b6b;
+    width: 40px;
+}
+
+.contact-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+    opacity: 0.8;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 1rem;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #ff6b6b;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 107, 107, 0.4);
+}
+
+/* Footer */
+.footer {
+    background: #000;
+    padding: 3rem 0 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 1rem;
+    color: #ff6b6b;
+}
+
+.footer-section p {
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #ff6b6b;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #ff6b6b;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.95);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-stats {
+        justify-content: center;
+    }
+    
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .plan-card.featured {
+        transform: none;
+    }
+    
+    .plan-card.featured:hover {
+        transform: translateY(-10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .features-grid,
+    .music-grid,
+    .artists-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .catalog-filters {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease;
+}
+
+.slide-in-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.6s ease;
+}
+
+.slide-in-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+      
+    </style>
+</body>
+</html>
