@@ -56,6 +56,17 @@ def health() -> dict:
     return {"status": "ok"}
 
 
+@app.get("/api/settings")
+def get_public_settings() -> dict:
+    """Return public settings (fee %, deposit expiry). No auth required."""
+    with connect() as conn:
+        rows = conn.execute(
+            "SELECT key, value FROM settings WHERE key IN "
+            "('platform_fee_percent', 'deposit_expiry_minutes')"
+        ).fetchall()
+    return {row["key"]: row["value"] for row in rows}
+
+
 # ── Markets ───────────────────────────────────────────────────────────────────
 
 @app.get("/api/markets", response_model=list[MarketResponse])

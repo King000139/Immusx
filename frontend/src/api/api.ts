@@ -54,6 +54,12 @@ export async function createMarket(payload: CreateMarketRequest): Promise<Market
   return data;
 }
 
+/** Fetch public app settings (platform_fee_percent, deposit_expiry_minutes) */
+export async function fetchSettings(): Promise<Record<string, string>> {
+  const { data } = await api.get<Record<string, string>>("/api/settings");
+  return data;
+}
+
 /** Request a unique deposit amount */
 export async function requestDeposit(payload: DepositRequest): Promise<DepositResponse> {
   const { data } = await api.post<DepositResponse>("/api/deposit/request", payload);

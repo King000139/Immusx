@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Market } from "../types";
-import { placeBet } from "../api/api";
+import { fetchSettings, placeBet } from "../api/api";
 
-// Platform fee shown to the user (must match the backend settings table)
-const PLATFORM_FEE_PCT = 0.10;
+const DEFAULT_PLATFORM_FEE_PCT = 0.10;
 
 interface BettingSlipProps {
   market: Market;
@@ -24,6 +23,19 @@ const BettingSlip: React.FC<BettingSlipProps> = ({
   const [amount, setAmount] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [feePct, setFeePct] = useState<number>(DEFAULT_PLATFORM_FEE_PCT);
+
+  // Fetch fee from backend once on mount
+  useEffect(() => {
+    fetchSettings()
+      .then((s) => {
+        const pct = parseFloat(s["platform_fee_percent"]);
+        if (!isNaN(pct)) setFeePct(pct / 100);
+      })
+      .catch(() => {
+        // keep the default if backend is unreachable
+      });
+  }, []);
 
   const currentPrice = side === "Yes" ? market.yes_price : market.no_price;
   const numAmount = parseFloat(amount) || 0;

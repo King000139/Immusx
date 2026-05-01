@@ -52,6 +52,7 @@ export interface DepositResponse {
   deposit_id: number;
   unique_amount: number;
   expires_at: string;
+  expiry_minutes: number;
 }
 
 export interface UTRSubmitRequest {

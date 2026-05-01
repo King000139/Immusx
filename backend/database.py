@@ -97,6 +97,8 @@ CREATE TABLE IF NOT EXISTS settings (
 
 SEED_SETTINGS = """
 INSERT OR IGNORE INTO settings (key, value) VALUES ('platform_fee_percent', '10.0');
+INSERT OR IGNORE INTO settings (key, value) VALUES ('deposit_expiry_minutes', '15');
+INSERT OR IGNORE INTO settings (key, value) VALUES ('max_deposit_amount', '100000');
 """
 
 SEED_MARKETS = """

@@ -75,6 +75,7 @@ class DepositResponse(BaseModel):
     deposit_id: int
     unique_amount: float
     expires_at: str
+    expiry_minutes: int
 
 
 class UTRSubmitResponse(BaseModel):

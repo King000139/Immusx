@@ -13,8 +13,6 @@ from datetime import datetime, timezone, timedelta
 
 from database import connect
 
-DEPOSIT_EXPIRY_MINUTES = 15
-
 
 def _now_iso() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S")
@@ -26,6 +24,22 @@ def _get_platform_fee(conn) -> float:
         "SELECT value FROM settings WHERE key = 'platform_fee_percent'"
     ).fetchone()
     return float(row["value"]) / 100.0 if row else 0.10
+
+
+def _get_deposit_expiry_minutes(conn) -> int:
+    """Read deposit_expiry_minutes from the settings table (default 15)."""
+    row = conn.execute(
+        "SELECT value FROM settings WHERE key = 'deposit_expiry_minutes'"
+    ).fetchone()
+    return int(row["value"]) if row else 15
+
+
+def _get_max_deposit_amount(conn) -> float:
+    """Read max_deposit_amount from the settings table (default 100 000)."""
+    row = conn.execute(
+        "SELECT value FROM settings WHERE key = 'max_deposit_amount'"
+    ).fetchone()
+    return float(row["value"]) if row else 100_000.0
 
 
 def _generate_unique_decimal(base_amount: float, conn) -> tuple[float, int]:
@@ -60,10 +74,14 @@ def request_deposit(user_id: int, base_amount: float) -> dict:
     """
     if base_amount <= 0:
         raise ValueError("Amount must be positive")
-    if base_amount > 100_000:
-        raise ValueError("Amount exceeds maximum single-deposit limit")
 
     with connect() as conn:
+        max_amount = _get_max_deposit_amount(conn)
+        if base_amount > max_amount:
+            raise ValueError(
+                f"Amount exceeds maximum single-deposit limit of ₹{max_amount:,.0f}"
+            )
+
         user = conn.execute(
             "SELECT id FROM users WHERE id = ?", (user_id,)
         ).fetchone()
@@ -78,8 +96,9 @@ def request_deposit(user_id: int, base_amount: float) -> dict:
         )
 
         unique_amount, decimal_part = _generate_unique_decimal(base_amount, conn)
+        expiry_minutes = _get_deposit_expiry_minutes(conn)
         expires_at = (
-            datetime.now(timezone.utc) + timedelta(minutes=DEPOSIT_EXPIRY_MINUTES)
+            datetime.now(timezone.utc) + timedelta(minutes=expiry_minutes)
         ).strftime("%Y-%m-%dT%H:%M:%S")
 
         cursor = conn.execute(
@@ -94,6 +113,7 @@ def request_deposit(user_id: int, base_amount: float) -> dict:
         "deposit_id": cursor.lastrowid,
         "unique_amount": unique_amount,
         "expires_at": expires_at,
+        "expiry_minutes": expiry_minutes,
     }
 
 
