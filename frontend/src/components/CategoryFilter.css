@@ -1,0 +1,36 @@
+.category-filter {
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  overflow-x: auto;
+  background: #0f0f1a;
+  scrollbar-width: none;
+}
+
+.category-filter::-webkit-scrollbar {
+  display: none;
+}
+
+.category-filter__btn {
+  flex-shrink: 0;
+  background: #1e1e30;
+  color: #ccc;
+  border: 1px solid #2a2a40;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-filter__btn:hover {
+  background: #2a2a50;
+  color: #fff;
+}
+
+.category-filter__btn--active {
+  background: linear-gradient(135deg, #7b2ff7, #00d2ff);
+  color: #fff;
+  border-color: transparent;
+  font-weight: 600;
+}

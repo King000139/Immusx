@@ -1,0 +1,97 @@
+.admin-page {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+  color: #e0e0e0;
+}
+
+.admin-page__title {
+  font-size: 1.3rem;
+  margin: 0 0 4px;
+}
+
+.admin-page__subtitle {
+  color: #888;
+  font-size: 0.85rem;
+  margin: 0 0 20px;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.admin-form__label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 0.82rem;
+  color: #aaa;
+}
+
+.admin-form__input {
+  background: #0f0f1a;
+  border: 1px solid #2a2a40;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.92rem;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.admin-form__input:focus {
+  border-color: #7b2ff7;
+}
+
+.admin-form__textarea {
+  resize: vertical;
+}
+
+.admin-form__select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.admin-form__result {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.admin-form__result--ok {
+  background: rgba(76, 175, 80, 0.15);
+  border: 1px solid #4caf50;
+  color: #4caf50;
+}
+
+.admin-form__result--err {
+  background: rgba(244, 67, 54, 0.15);
+  border: 1px solid #f44336;
+  color: #f44336;
+}
+
+.admin-form__result-id {
+  margin: 4px 0 0;
+  font-weight: 600;
+}
+
+.admin-form__submit {
+  padding: 13px;
+  background: linear-gradient(135deg, #7b2ff7, #00d2ff);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.admin-form__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -1,0 +1,167 @@
+.betting-slip-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 200;
+  animation: fade-in 0.2s ease;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.betting-slip {
+  background: #1a1a2e;
+  border-radius: 20px 20px 0 0;
+  padding: 20px 18px 32px;
+  width: 100%;
+  max-width: 480px;
+  animation: slide-up 0.25s ease;
+  border: 1px solid #2a2a40;
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+.betting-slip__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.betting-slip__title {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.betting-slip__close {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.betting-slip__close:hover {
+  color: #fff;
+}
+
+.betting-slip__question {
+  color: #aaa;
+  font-size: 0.85rem;
+  margin: 0 0 14px;
+  line-height: 1.4;
+}
+
+.betting-slip__side {
+  display: inline-block;
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.betting-slip__side--yes {
+  background: #27ae60;
+  color: #fff;
+}
+
+.betting-slip__side--no {
+  background: #c0392b;
+  color: #fff;
+}
+
+.betting-slip__label {
+  display: block;
+  color: #aaa;
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+}
+
+.betting-slip__input {
+  width: 100%;
+  background: #0f0f1a;
+  border: 1px solid #2a2a40;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.betting-slip__input:focus {
+  border-color: #7b2ff7;
+}
+
+.betting-slip__returns {
+  background: #0f0f1a;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.betting-slip__returns-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.betting-slip__return-val {
+  color: #e0e0e0;
+  font-weight: 600;
+}
+
+.betting-slip__profit {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+.betting-slip__loss {
+  color: #f44336;
+  font-weight: 600;
+}
+
+.betting-slip__error {
+  color: #f44336;
+  font-size: 0.82rem;
+  margin-top: 8px;
+}
+
+.betting-slip__confirm {
+  margin-top: 18px;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #7b2ff7, #00d2ff);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.betting-slip__confirm:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.betting-slip__confirm:not(:disabled):active {
+  transform: scale(0.98);
+}
