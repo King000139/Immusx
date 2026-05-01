@@ -7,12 +7,16 @@ test('renders FixLab Prediction header', () => {
   expect(screen.getByText(/FixLab Prediction/i)).toBeInTheDocument();
 });
 
-test('renders Markets navigation button', () => {
+test('renders all four nav buttons', () => {
   render(<App />);
-  expect(screen.getByRole('button', { name: /Markets/i })).toBeInTheDocument();
-});
-
-test('renders Admin navigation button', () => {
-  render(<App />);
+  expect(screen.getByRole('button', { name: /Home/i })).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: /Portfolio/i })).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: /Wallet/i })).toBeInTheDocument();
   expect(screen.getByRole('button', { name: /Admin/i })).toBeInTheDocument();
 });
+
+test('renders Deposit button in header', () => {
+  render(<App />);
+  expect(screen.getByRole('button', { name: /Deposit funds/i })).toBeInTheDocument();
+});
+

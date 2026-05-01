@@ -11,12 +11,22 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from database import connect, init_db
 from models import (
+    AdminRevenueItem,
     BetRequest,
     BetResponse,
     CreateMarketRequest,
+    DepositRequest,
+    DepositResponse,
     MarketResponse,
+    SettleMarketRequest,
+    SettleMarketResponse,
+    SMSWebhookPayload,
+    SMSWebhookResponse,
+    UTRSubmitRequest,
+    UTRSubmitResponse,
     UserResponse,
 )
+from payment import process_sms_webhook, request_deposit, settle_market, submit_utr
 from pricing import place_bet
 
 # ── Admin token (set ADMIN_TOKEN env-var in production) ───────────────────────
@@ -119,6 +129,58 @@ def get_user(user_id: int):
     return dict(row)
 
 
+@app.get("/api/users/{user_id}/bets")
+def get_user_bets(user_id: int):
+    """Return all bets for a user, joined with market question."""
+    with connect() as conn:
+        rows = conn.execute(
+            """SELECT b.id, b.market_id, m.question, b.side, b.amount,
+                      b.price_at_bet, b.created_at, m.is_active
+               FROM bets b
+               JOIN markets m ON m.id = b.market_id
+               WHERE b.user_id = ?
+               ORDER BY b.created_at DESC""",
+            (user_id,),
+        ).fetchall()
+    return [dict(r) | {"is_active": bool(r["is_active"])} for r in rows]
+
+
+# ── Deposit ───────────────────────────────────────────────────────────────────
+
+@app.post("/api/deposit/request", response_model=DepositResponse, status_code=201)
+def deposit_request(payload: DepositRequest):
+    """Generate a unique deposit amount for manual payment."""
+    try:
+        result = request_deposit(payload.user_id, payload.base_amount)
+    except LookupError as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+    return DepositResponse(**result)
+
+
+@app.post("/api/deposit/submit-utr", response_model=UTRSubmitResponse)
+def deposit_submit_utr(payload: UTRSubmitRequest):
+    """Submit a 12-digit UTR for a pending deposit."""
+    try:
+        result = submit_utr(payload.deposit_id, payload.utr)
+    except LookupError as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+    return UTRSubmitResponse(**result)
+
+
+@app.post("/api/deposit/sms-webhook", response_model=SMSWebhookResponse)
+def deposit_sms_webhook(payload: SMSWebhookPayload):
+    """
+    Receive amount + UTR from the SMS bot.
+    Matches to a pending deposit and credits the user's balance on success.
+    """
+    result = process_sms_webhook(payload.amount, payload.utr)
+    return SMSWebhookResponse(**result)
+
+
 # ── Admin ─────────────────────────────────────────────────────────────────────
 
 @app.post("/admin/create-market", response_model=MarketResponse, status_code=201)
@@ -140,3 +202,30 @@ def create_market(payload: CreateMarketRequest):
         ).fetchone()
 
     return dict(row) | {"is_active": bool(row["is_active"])}
+
+
+@app.post("/admin/settle-market", response_model=SettleMarketResponse)
+def admin_settle_market(payload: SettleMarketRequest):
+    """Settle a market: pay winners (minus platform fee) and close the market."""
+    if payload.admin_token != ADMIN_TOKEN:
+        raise HTTPException(status_code=403, detail="Invalid admin token")
+    try:
+        result = settle_market(payload.market_id, payload.winning_side)
+    except LookupError as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+    return SettleMarketResponse(**result)
+
+
+@app.get("/admin/revenue", response_model=list[AdminRevenueItem])
+def admin_revenue(admin_token: str):
+    """Return all admin revenue entries (requires admin_token query param)."""
+    if admin_token != ADMIN_TOKEN:
+        raise HTTPException(status_code=403, detail="Invalid admin token")
+    with connect() as conn:
+        rows = conn.execute(
+            "SELECT * FROM admin_revenue ORDER BY created_at DESC"
+        ).fetchall()
+    return [dict(r) for r in rows]
+

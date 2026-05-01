@@ -22,6 +22,27 @@ class CreateMarketRequest(BaseModel):
     admin_token: str = Field(..., description="Simple admin secret token")
 
 
+class DepositRequest(BaseModel):
+    user_id: int = Field(..., gt=0)
+    base_amount: float = Field(..., gt=0, description="Requested deposit amount in ₹")
+
+
+class UTRSubmitRequest(BaseModel):
+    deposit_id: int = Field(..., gt=0)
+    utr: str = Field(..., description="12-digit UTR number")
+
+
+class SMSWebhookPayload(BaseModel):
+    amount: float = Field(..., description="Amount parsed from SMS (e.g. 200.14)")
+    utr: str = Field(..., description="UTR parsed from SMS")
+
+
+class SettleMarketRequest(BaseModel):
+    market_id: int = Field(..., gt=0)
+    winning_side: str = Field(..., pattern="^(Yes|No)$")
+    admin_token: str = Field(..., description="Admin secret token")
+
+
 # ── Response bodies ───────────────────────────────────────────────────────────
 
 class MarketResponse(BaseModel):
@@ -48,3 +69,38 @@ class UserResponse(BaseModel):
     id: int
     username: str
     balance: float
+
+
+class DepositResponse(BaseModel):
+    deposit_id: int
+    unique_amount: float
+    expires_at: str
+
+
+class UTRSubmitResponse(BaseModel):
+    message: str
+
+
+class SMSWebhookResponse(BaseModel):
+    matched: bool
+    message: str
+    user_id: int | None = None
+    credited_amount: float | None = None
+
+
+class SettleMarketResponse(BaseModel):
+    market_id: int
+    winning_side: str
+    settled_bets: int
+    total_platform_fee: float
+    platform_fee_pct: float
+
+
+class AdminRevenueItem(BaseModel):
+    id: int
+    source: str
+    amount: float
+    market_id: int | None
+    user_id: int | None
+    created_at: str
+

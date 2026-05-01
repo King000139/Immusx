@@ -1,5 +1,16 @@
 import axios from "axios";
-import { BetRequest, BetResponse, CreateMarketRequest, Market, User } from "../types";
+import {
+  BetHistoryItem,
+  BetRequest,
+  BetResponse,
+  CreateMarketRequest,
+  DepositRequest,
+  DepositResponse,
+  Market,
+  User,
+  UTRSubmitRequest,
+  UTRSubmitResponse,
+} from "../types";
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL || "http://localhost:8000",
@@ -31,8 +42,27 @@ export async function fetchUser(userId: number): Promise<User> {
   return data;
 }
 
+/** Fetch a user's bet history */
+export async function fetchUserBets(userId: number): Promise<BetHistoryItem[]> {
+  const { data } = await api.get<BetHistoryItem[]>(`/api/users/${userId}/bets`);
+  return data;
+}
+
 /** Create a new market (admin) */
 export async function createMarket(payload: CreateMarketRequest): Promise<Market> {
   const { data } = await api.post<Market>("/admin/create-market", payload);
   return data;
 }
+
+/** Request a unique deposit amount */
+export async function requestDeposit(payload: DepositRequest): Promise<DepositResponse> {
+  const { data } = await api.post<DepositResponse>("/api/deposit/request", payload);
+  return data;
+}
+
+/** Submit a UTR for a pending deposit */
+export async function submitUTR(payload: UTRSubmitRequest): Promise<UTRSubmitResponse> {
+  const { data } = await api.post<UTRSubmitResponse>("/api/deposit/submit-utr", payload);
+  return data;
+}
+

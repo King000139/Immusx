@@ -1,9 +1,101 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { createMarket } from "../api/api";
 import { CreateMarketRequest, Market } from "../types";
 import "./AdminPage.css";
 
 const CATEGORIES = ["Cricket", "Crypto", "News", "Sports", "Politics", "General"];
+const API_BASE = process.env.REACT_APP_API_URL || "http://localhost:8000";
+
+// ── Settle Market form ────────────────────────────────────────────────────────
+
+const SettleMarketForm: React.FC = () => {
+  const [marketId, setMarketId] = useState("");
+  const [winningSide, setWinningSide] = useState<"Yes" | "No">("Yes");
+  const [adminToken, setAdminToken] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState<{ success: boolean; message: string } | null>(null);
+
+  const handleSettle = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setResult(null);
+    try {
+      const { data } = await axios.post(`${API_BASE}/admin/settle-market`, {
+        market_id: parseInt(marketId, 10),
+        winning_side: winningSide,
+        admin_token: adminToken,
+      });
+      setResult({
+        success: true,
+        message: `Settled ${data.settled_bets} bets. Platform fee: ₹${data.total_platform_fee} (${data.platform_fee_pct}%)`,
+      });
+      setMarketId("");
+    } catch (err: unknown) {
+      const msg = axios.isAxiosError(err)
+        ? err.response?.data?.detail ?? err.message
+        : "Failed to settle market";
+      setResult({ success: false, message: msg });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <section className="admin-form" aria-label="Settle market form" style={{ marginTop: 28 }}>
+      <h3 className="admin-page__subtitle" style={{ fontSize: "0.95rem", color: "#e0e0e0", marginBottom: 12 }}>
+        ⚖️ Settle a Market
+      </h3>
+      <form onSubmit={handleSettle} style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+        <label className="admin-form__label">
+          Market ID *
+          <input
+            type="number"
+            min="1"
+            className="admin-form__input"
+            value={marketId}
+            onChange={(e) => setMarketId(e.target.value)}
+            required
+            placeholder="e.g. 1"
+          />
+        </label>
+        <label className="admin-form__label">
+          Winning Side *
+          <select
+            className="admin-form__input admin-form__select"
+            value={winningSide}
+            onChange={(e) => setWinningSide(e.target.value as "Yes" | "No")}
+            required
+          >
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </label>
+        <label className="admin-form__label">
+          Admin Token *
+          <input
+            type="password"
+            className="admin-form__input"
+            value={adminToken}
+            onChange={(e) => setAdminToken(e.target.value)}
+            required
+            placeholder="Enter admin secret token"
+          />
+        </label>
+        {result && (
+          <div className={`admin-form__result ${result.success ? "admin-form__result--ok" : "admin-form__result--err"}`}>
+            {result.message}
+          </div>
+        )}
+        <button type="submit" className="admin-form__submit" disabled={loading}>
+          {loading ? "Settling…" : "Settle Market"}
+        </button>
+      </form>
+    </section>
+  );
+};
+
+// ── Create Market form ────────────────────────────────────────────────────────
 
 const AdminPage: React.FC = () => {
   const [form, setForm] = useState<CreateMarketRequest>({
@@ -127,6 +219,7 @@ const AdminPage: React.FC = () => {
           {loading ? "Creating…" : "Create Market"}
         </button>
       </form>
+      <SettleMarketForm />
     </main>
   );
 };

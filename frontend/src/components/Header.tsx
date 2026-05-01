@@ -4,9 +4,10 @@ import "./Header.css";
 interface HeaderProps {
   balance: number;
   username: string;
+  onDepositClick: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ balance, username }) => {
+const Header: React.FC<HeaderProps> = ({ balance, username, onDepositClick }) => {
   return (
     <header className="header">
       <div className="header__logo">
@@ -15,9 +16,19 @@ const Header: React.FC<HeaderProps> = ({ balance, username }) => {
       </div>
       <div className="header__user">
         <span className="header__username">{username}</span>
-        <div className="header__balance">
-          <span className="header__balance-label">Balance</span>
-          <span className="header__balance-value">₹{balance.toFixed(2)}</span>
+        <div className="header__balance-row">
+          <div className="header__balance">
+            <span className="header__balance-label">Balance</span>
+            <span className="header__balance-value">₹{balance.toFixed(2)}</span>
+          </div>
+          <button
+            className="header__deposit-btn"
+            onClick={onDepositClick}
+            aria-label="Deposit funds"
+            title="Deposit"
+          >
+            +
+          </button>
         </div>
       </div>
     </header>
